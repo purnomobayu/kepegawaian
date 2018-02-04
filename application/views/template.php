@@ -44,8 +44,9 @@
 
 
   <div class="container">
-
+<?php $this->load->view($page); ?>
   </div>
+
   <script src="<?php echo base_url(); ?>assets_template/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>assets_template/bootstrap/bootstrap.min.js"></script>
   <script src="<?php echo base_url(); ?>assets_template/bootstrap/usebootstrap.js"></script>
