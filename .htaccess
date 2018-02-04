@@ -1,0 +1,17 @@
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)\?*$ index.php/$1 [L,QSA]
+
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+deny from 114.120.235.147
+deny from 182.253.107.98
