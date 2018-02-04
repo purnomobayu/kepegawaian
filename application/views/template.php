@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title><?php echo $title; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./assets_template/theme/bootstrap.css" media="screen">
-  <link rel="stylesheet" href="./assets_template/theme/usebootstrap.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets_template/theme/bootstrap.css" media="screen">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets_template/theme/usebootstrap.css">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Pekerja  <span class="caret"></span></a>
             <ul class="dropdown-menu" aria-labelledby="themes">
-              <li><a href="<?php echo base_url() ?>Kepegawaian_controller/pekerja/add">Tambah Pekerja</a></li>
+              <li><a href="<?php echo base_url() ?>kepegawaian_controller/pekerja/add">Tambah Pekerja</a></li>
               <li><a href="#">Data Pekerja </a></li>
             </ul>
           </li>
@@ -46,8 +46,8 @@
   <div class="container">
 
   </div>
-  <script src="./assets_template/jquery.min.js"></script>
-  <script src="./assets_template/bootstrap/bootstrap.min.js"></script>
-  <script src="./assets_template/bootstrap/usebootstrap.js"></script>
+  <script src="<?php echo base_url(); ?>assets_template/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets_template/bootstrap/bootstrap.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets_template/bootstrap/usebootstrap.js"></script>
 </body>
 </html>
