@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title><?php echo $title; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../assets_template/theme/bootstrap.css" media="screen">
-  <link rel="stylesheet" href="../assets_template/theme/usebootstrap.css">
+  <link rel="stylesheet" href="./assets_template/theme/bootstrap.css" media="screen">
+  <link rel="stylesheet" href="./assets_template/theme/usebootstrap.css">
 </head>
 <body>
 
@@ -46,8 +46,8 @@
   <div class="container">
 
   </div>
-  <script src="../assets_template/jquery.min.js"></script>
-  <script src="../assets_template/bootstrap/bootstrap.min.js"></script>
-  <script src="../assets_template/bootstrap/usebootstrap.js"></script>
+  <script src="./assets_template/jquery.min.js"></script>
+  <script src="./assets_template/bootstrap/bootstrap.min.js"></script>
+  <script src="./assets_template/bootstrap/usebootstrap.js"></script>
 </body>
 </html>
