@@ -3,7 +3,6 @@ $nik = ($this->uri->segment(3) == "add") ? "" : $cuti->nik;
 $catatan = ($this->uri->segment(3) == "add") ? "" : $cuti->catatan;
 $lama_cuti = ($this->uri->segment(3) == "add") ? "" : $cuti->lama_cuti;
 $tgl_mulai = ($this->uri->segment(3) == "add") ? "" : $cuti->tgl_mulai;
-$tgl_masuk = ($this->uri->segment(3) == "add") ? "" : $cuti->tgl_masuk;
 $url = ($this->uri->segment(3) == "add") ? "kepegawaian_controller/cuti/add/proses" : "kepegawaian_controller/cuti/edit/proses/".$nik;
 ?>
 <?php echo form_open(base_url().$url); ?>
@@ -13,7 +12,7 @@ $url = ($this->uri->segment(3) == "add") ? "kepegawaian_controller/cuti/add/pros
 </div>
 <div class="form-group has-success">
   <label class="form-control-label" for="tm">Tanggal Mulai</label>
-  <input name="tgl_mulai" value="<?php echo $tgl_mulai ?>" class="form-control is-valid" id="tm" type="text">
+  <input name="tgl_mulai" value="<?php echo $tgl_mulai ?>" class="form-control tgl is-valid" id="tm" type="text">
 </div>
 <div class="form-group has-success">
   <label class="form-control-label" for="lama_cuti">Lama Cuti</label>
@@ -21,7 +20,7 @@ $url = ($this->uri->segment(3) == "add") ? "kepegawaian_controller/cuti/add/pros
 </div>
 <div class="form-group has-success">
   <label class="form-control-label" for="catatan">Catatan</label>
-  <textarea name="catatan" value="<?php echo $catatan ?>" class="form-control is-valid" id="catatan"></textarea>
+  <textarea name="catatan" value="" class="form-control is-valid" id="catatan"><?php echo $catatan ?></textarea>
 </div>
 <button class="btn btn-primary" type="submit"></button>
 <?php echo form_close(); ?>

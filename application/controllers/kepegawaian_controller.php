@@ -41,7 +41,7 @@ class Kepegawaian_controller extends CI_Controller {
 					$ins = $this->kepegawaian_model->insert($data,'pekerja');
 					($ins) ? $this->session->set_flashdata('notif', '<h1>sukses add</h1>') : $this->session->set_flashdata('notif', '<h1>ggl add</h1>');
 				} else {
-					$this->session->set_flashdata('notif', validation_errors());
+					$this->session->set_flashdata('notif', "<h1>".validation_errors()."</h1>");
 				}
 				redirect('kepegawaian_controller','refresh');
 			}
@@ -67,7 +67,7 @@ class Kepegawaian_controller extends CI_Controller {
 					$up = $this->kepegawaian_model->update($data,['nik' => $this->uri->segment(5)], 'pekerja');
 					($up) ? $this->session->set_flashdata('notif', '<h1>sukses edit</h1>') : $this->session->set_flashdata('notif', ' <h1>ggl edit</h1>');
 				} else {
-					$this->session->set_flashdata('notif', validation_errors());
+					$this->session->set_flashdata('notif', "<h1>".validation_errors()."</h1>");
 				}
 				redirect('kepegawaian_controller','refresh');
 			}
@@ -105,9 +105,9 @@ class Kepegawaian_controller extends CI_Controller {
 					$ins = $this->kepegawaian_model->insert($data,'cuti_pekerja');
 					($ins) ? $this->session->set_flashdata('notif', '<h1>sukses add</h1>') : $this->session->set_flashdata('notif', '<h1>ggl add</h1>');
 				} else {
-					$this->session->set_flashdata('notif', validation_errors());
+					$this->session->set_flashdata('"<h1>".notif'."</h1>", validation_errors());
 				}
-				redirect('kepegawaian_controller','refresh');
+				redirect('kepegawaian_controller/cuti','refresh');
 			}
 			else {
 				$this->template('Tambah Data Cuti','f_cuti');
@@ -122,24 +122,29 @@ class Kepegawaian_controller extends CI_Controller {
 				if ($this->form_validation->run() == TRUE) {
 					$data = [
 						'nik' => $this->input->post('nik',true),
-						'tgl_mulai' => $this->input->post('nama',true),
-						'lama_cuti' => $this->input->post('tgl_masuk',true),
+						'tgl_mulai' => $this->input->post('tgl_mulai',true),
+						'lama_cuti' => $this->input->post('lama_cuti',true),
 						'catatan' => $this->input->post('catatan',true),
 					];
 					$up = $this->kepegawaian_model->update($data,['nik' => $this->uri->segment(5)], 'cuti_pekerja');
 					($up) ? $this->session->set_flashdata('notif', '<h1>sukses edit</h1>') : $this->session->set_flashdata('notif', ' <h1>ggl edit</h1>');
 				} else {
-					$this->session->set_flashdata('notif', validation_errors());
+					$this->session->set_flashdata('notif', "<h1>".validation_errors()."</h1>");
 				}
-				redirect('kepegawaian_controller','refresh');
+				redirect('kepegawaian_controller/cuti','refresh');
 			}
 			else {
 				$data['cuti'] = $this->kepegawaian_model->get_one(['nik' => $this->uri->segment(4)],"cuti_pekerja");
 				$this->template('Edit Data Cuti','f_cuti',$data);
 			}
 		}
+		elseif ($this->uri->segment(3) == "delete") {
+			$del = $this->kepegawaian_model->del(['id' => $this->uri->segment(4)],"cuti_pekerja");
+			($del) ? $this->session->set_flashdata('notif', '<h1>sukses hps</h1>') : $this->session->set_flashdata('notif', ' <h1>ggl hps</h1>');
+			redirect('kepegawaian_controller/cuti','refresh');
+		}
 		else {
-			$data['pekerja'] = $this->kepegawaian_model->get_multi("","cuti_pekerja");
+			$data['cuti'] = $this->kepegawaian_model->detail_cuti();
 			$this->template('Data CUTI','v_data_cuti',$data);
 		}
 	}

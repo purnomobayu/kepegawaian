@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets_template/theme/bootstrap.css" media="screen">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets_template/theme/usebootstrap.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets_template/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
 </head>
 <body>
 
@@ -34,7 +35,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="" id="themes">Cuti  <span class="caret"></span></a>
             <ul class="dropdown-menu" aria-labelledby="themes">
               <li><a href="<?php echo base_url() ?>kepegawaian_controller/cuti/add">Tambah Cuti</a></li>
-              <li><a href="#">Data Cuti</a></li>
+              <li><a href="<?php echo base_url() ?>kepegawaian_controller/cuti/">Data Cuti</a></li>
             </ul>
           </li>
         </ul>
@@ -50,5 +51,13 @@
   <script src="<?php echo base_url(); ?>assets_template/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>assets_template/bootstrap/bootstrap.min.js"></script>
   <script src="<?php echo base_url(); ?>assets_template/bootstrap/usebootstrap.js"></script>
+ <script src="<?php echo base_url(); ?>assets_template/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+  <script type="text/javascript">
+    $('.tgl').datepicker({
+      autoclose: true,
+      format: 'yyyy-mm-dd'
+    });
+  </script>
 </body>
 </html>

@@ -21,11 +21,11 @@ $url = ($this->uri->segment(3) == "add") ? "kepegawaian_controller/pekerja/add/p
 </div>
 <div class="form-group has-success">
   <label class="form-control-label" for="tlhr">Tanggal Lahir</label>
-  <input name="tgl_lahir" value="<?php echo $tgl_lahir ?>" class="form-control is-valid" id="tlhr" type="text">
+  <input name="tgl_lahir" value="<?php echo $tgl_lahir ?>" class="form-control tgl is-valid" id="tlhr" type="text">
 </div>
 <div class="form-group has-success">
   <label class="form-control-label" for="tms">Tanggal Masuk</label>
-  <input name="tgl_masuk" value="<?php echo $tgl_masuk ?>" class="form-control is-valid" id="tms" type="text">
+  <input name="tgl_masuk" value="<?php echo $tgl_masuk ?>" class="form-control tgl is-valid" id="tms" type="text">
 </div>
 <button class="btn btn-primary" type="submit"></button>
 <?php echo form_close(); ?>

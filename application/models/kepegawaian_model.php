@@ -49,6 +49,12 @@ class Kepegawaian_model extends CI_Model {
 		return ($this->db->where($where)->delete($tabel)) ? true : false ;
 	}
 
+	public function detail_cuti()
+	{
+		$this->db->join('cuti_pekerja', 'cuti_pekerja.nik = pekerja.nik');
+		return $this->db->get('pekerja')->result();
+	}
+
 
 }
 
