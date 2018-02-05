@@ -37,6 +37,19 @@ class Kepegawaian_model extends CI_Model {
 		return ($update) ? true : false;
 	}
 
+	public function cek_sisa_cuti($nik,$tgl_mulai,$lamacuti)
+	{
+		$this->db->select('nik,sum(lama_cuti) AS lmacuti, ( 12 - sum(lama_cuti)) AS sisa_cuti');
+		$this->db->where('YEAR(tgl_mulai) = YEAR(NOW()) AND nik = "$nik"');
+
+	}
+
+		public function del($where,$tabel)
+	{
+		return ($this->db->where($where)->delete($tabel)) ? true : false ;
+	}
+
+
 }
 
 /* End of file kepegawaian_model.php */

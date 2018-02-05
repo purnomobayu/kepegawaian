@@ -23,17 +23,17 @@
 
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Pekerja  <span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" id="themes">Pekerja  <span class="caret"></span></a>
             <ul class="dropdown-menu" aria-labelledby="themes">
               <li><a href="<?php echo base_url() ?>kepegawaian_controller/pekerja/add">Tambah Pekerja</a></li>
-              <li><a href="#">Data Pekerja </a></li>
+              <li><a href="<?php echo base_url() ?>kepegawaian_controller/pekerja/">Data Pekerja </a></li>
             </ul>
           </li>
 
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Cuti  <span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" id="themes">Cuti  <span class="caret"></span></a>
             <ul class="dropdown-menu" aria-labelledby="themes">
-              <li><a href="#">Tambah Cuti</a></li>
+              <li><a href="<?php echo base_url() ?>kepegawaian_controller/cuti/add">Tambah Cuti</a></li>
               <li><a href="#">Data Cuti</a></li>
             </ul>
           </li>
