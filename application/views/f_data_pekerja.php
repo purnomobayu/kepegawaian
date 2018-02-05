@@ -27,5 +27,5 @@ $url = ($this->uri->segment(3) == "add") ? "kepegawaian_controller/pekerja/add/p
   <label class="form-control-label" for="tms">Tanggal Masuk</label>
   <input name="tgl_masuk" value="<?php echo $tgl_masuk ?>" class="form-control tgl is-valid" id="tms" type="text">
 </div>
-<button class="btn btn-primary" type="submit"></button>
+<button class="btn btn-primary" type="submit">ok</button>
 <?php echo form_close(); ?>

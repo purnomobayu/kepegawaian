@@ -22,5 +22,5 @@ $url = ($this->uri->segment(3) == "add") ? "kepegawaian_controller/cuti/add/pros
   <label class="form-control-label" for="catatan">Catatan</label>
   <textarea name="catatan" value="" class="form-control is-valid" id="catatan"><?php echo $catatan ?></textarea>
 </div>
-<button class="btn btn-primary" type="submit"></button>
+<button class="btn btn-primary" type="submit">ok</button>
 <?php echo form_close(); ?>

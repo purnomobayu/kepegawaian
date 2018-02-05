@@ -15,7 +15,7 @@ class Kepegawaian_model extends CI_Model {
 		}
 		$data = $this->db->get($tabel)->result();
 		// echo $this->db->last_query();die();
-		return (count($data) > 0 ) ? $data : false;
+		return $data ;
 	}
 
 	public function get_one($where,$tabel)

@@ -1,0 +1,22 @@
+============================================
+2a.	Tampilkan 2 pekerja tersenior.
+SELECT * FROM `pekerja` ORDER BY tgl_masuk asc LIMIT 2 
+============================================
+
+============================================
+2b.	Tampilkan pekerja yang saat ini sedang cuti. (tampilkan NIK, Nama, Tgl_mulai, lama_cuti) :
+
+SELECT pekerja.nik,pekerja.nama,cuti_pekerja.tgl_mulai,cuti_pekerja.lama_cuti FROM cuti_pekerja JOIN pekerja ON pekerja.nik = cuti_pekerja.nik WHERE CURDATE() BETWEEN tgl_mulai AND DATE_ADD(tgl_mulai, INTERVAL lama_cuti DAY)
+============================================
+
+============================================
+2c.	Jika di asumsikan jumlah cuti tiap pekerja adalah 12 ditiap tahun, maka tampilkanlah sisa cuti tiap-taip pekerja di tahun 2017. (tampilkan nik, nama, sisa_cuti) 
+
+SELECT pekerja.nik,nama,sum(lama_cuti) AS lamacuti, ( 12 - sum(lama_cuti)) AS sisa_cuti FROM `cuti_pekerja` JOIN pekerja ON pekerja.nik = cuti_pekerja.nik WHERE YEAR(tgl_mulai) = 2017 GROUP BY nik ORDER BY `cuti_pekerja`.`nik` ASC 
+============================================
+
+============================================
+2d.	Tampilkan pekerja - pekerja yang mengambil cuti lebih dari 1 kali di tahun ini.  
+
+SELECT * FROM (SELECT pekerja.nik,nama,SUM(lama_cuti) AS totalCuti,YEAR(NOW()) as tahuncuti FROM cuti_pekerja JOIN pekerja ON pekerja.nik = cuti_pekerja.nik WHERE YEAR(tgl_mulai) = YEAR(NOW()) GROUP BY nik) as totcut WHERE totalCuti > 1 
+============================================
